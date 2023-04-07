@@ -1,27 +1,23 @@
-import {Routes, Route, Navigate} from "react-router-dom"
-import {Movie, MoviePage} from "../pages"
+import { Routes, Route, Navigate } from "react-router-dom"
+import { Movie, MoviePage } from "../pages"
 
 export const MovieRoutes = props => {
-    return (
+  return (
+    <>
+      <div className="">
 
-        <>
+        <Routes>
 
-            <div className="">
+          <Route path="movies" element={<MoviePage />} />
 
-                <Routes>
+          <Route path="movies/:id" element={<Movie />} />
 
-                    <Route path="movies" element={<MoviePage/>}/>
+          <Route path="/" element={<Navigate to="/movies" />} />
 
-                    <Route path="movies/:id" element={<Movie/>}/>
+        </Routes>
 
-                    <Route path="/" element={<Navigate to="/movies" />} />
-
-                </Routes>
-
-            </div>
-
-        </>
-
-    )
+      </div>
+    </>
+  )
 }
 
